@@ -130,8 +130,9 @@ nav {
     color: var(--clr-primary-600);
 }
 
-.menu a .active{
-  color: var(--clr-primary-600) }
+.menu a .active {
+    color: var(--clr-primary-600)
+}
 
 .menu a.btn-cta {
     color: var(--clr-primary-600);
@@ -186,12 +187,61 @@ nav {
         color: var(--clr-primary-600);
         font-size: 2rem;
         cursor: pointer;
+
     }
 
     .menu a.btn-cta {
         border: inherit;
     }
+
+
+
+    .menu-icon {
+        margin-inline-end: .5rem;
+
+        .bar {
+            width: 30px;
+            height: 4px;
+            background: var(--clr-primary-600);
+            border-radius: 2px;
+            transition: 0.4s ease;
+
+            &:not(:first-child) {
+                margin-top: 4px;
+            }
+        }
+    }
+
+    #menu-toggle {
+        position: absolute;
+        left: -999px;
+        top: -999px;
+    }
+
+    #menu-toggle:checked+.menu-icon {
+
+        .bar {
+            transform: rotatey(180deg) rotatex(360deg);
+
+            &:first-child {
+                transform: rotate(-45deg);
+                margin-top: 0px;
+            }
+
+            &:nth-child(2) {
+                opacity: 0;
+            }
+
+            &:nth-child(3) {
+                margin-top: -12px;
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+
 }
+
 
 
 
@@ -211,15 +261,17 @@ nav {
     color: var(--clr-primary-700);
 
 }
+
 @media only screen and (max-width: 1024px) {
-    .hero{
-        h1{
+    .hero {
+        h1 {
             text-align: center;
             font-size: 2rem;
-            b{
+
+            b {
                 display: flex;
-          justify-content: center;
-          margin-block: 1rem;
+                justify-content: center;
+                margin-block: 1rem;
             }
         }
     }
@@ -384,6 +436,18 @@ nav {
 
 .team {
     padding-block: 3.3rem;
+
+    h4 {
+        font-size: var(--font-size-200);
+        font-weight: var(--font-weight-300);
+        margin-top: 1.1rem;
+    }
+
+    span {
+        color: hsla(208, 40%, 9%, 1);
+        font-size: .85rem;
+
+    }
 }
 
 .owl-carousel .owl-dot {
@@ -572,7 +636,7 @@ nav {
         margin-top: 3.3rem;
         padding: 1rem;
         text-align: center;
-
+font-size: 0.85rem;
     }
 
 }
